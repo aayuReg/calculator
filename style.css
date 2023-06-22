@@ -1,56 +1,79 @@
-*,*::before,*::after{
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: normal;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+}
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    background:linear-gradient(to right,#00AAFF,#5bf07b)
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #5bf07b);
+  margin-bottom: 10px;
 }
 
-.calculator-grid{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4,100px);
-    grid-template-rows: minmax(120px,auto) repeat(5,100px);
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-.calculator-grid>button{
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 225, 225, 0.75);
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 225, 225, 0.75);
 }
 
-.calculator-grid>button:hover{
-    background-color: rgba(255, 255,255, 0.9);
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.span-two{
-    grid-column: span 2;
+.span-two {
+  grid-column: span 2;
 }
-.output{
-    grid-column:1/-1;
-    background-color: rgba(0,40, 60, .75);
+.output {
+  grid-column: 1/-1;
+  background-color: rgba(0, 40, 60, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-around;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10px;
+}
+
+.output > .previous-operand {
+  color: rgba(255, 225, 225, 0.75);
+  font-size: 1.5rem;
+}
+.output > .current-operand {
+  color: rgba(255, 255, 255);
+  font-size: 2.5rem;
+}
+
+
+.footer{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    /* background-color: #f6f6f6; */
     display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: space-around;
-    word-wrap: break-word;
-    word-break: break-all;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
     padding: 10px;
-}
-
-.output>.previous-operand{
-     color: rgba(255,225,225,0.75);
-     font-size: 1.5rem;
-}
-.output>.current-operand{
-     color: rgba(255,255,255);
-     font-size: 2.5rem;
+    font-size: 20px;
 }
